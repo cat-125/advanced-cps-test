@@ -1,8 +1,11 @@
 const canvas = document.getElementsByTagName('canvas')[0];
 const [width, height] = [window.innerWidth, window.innerHeight - 4];
-canvas.width = width;
-canvas.height = height;
+canvas.width = width * devicePixelRatio;
+canvas.height = height * devicePixelRatio;
+canvas.style.width = width + 'px';
+canvas.style.height = height + 'px';
 const ctx = canvas.getContext('2d');
+ctx.scale(devicePixelRatio, devicePixelRatio);
 
 let mouseX = mouseY = prevX = prevY = 0;
 let isMouseDown = false;
@@ -13,6 +16,8 @@ let frame = 0;
 let clicks = 0;
 let rcps = 0;
 let cps = 0;
+let fps = 60;
+let fpsc = 0;
 
 /*const cpsWin = new cheatgui.Window({
 	title: "Settings",
@@ -73,6 +78,7 @@ function tick() {
 	
 	ctx.font = '15px Arial';
 	const lines = [
+		'FPS: ' + fps,
 		'CPS: ' + cps,
 		'Real CPS: ' + rcps,
 		'Average Delay: ' + (Math.round(delaySum / clicks) || '0') + 'ms'
@@ -93,6 +99,7 @@ function tick() {
 		if (circles[i].life <= 0) circles.splice(i, 1);
 	}
 
+	fpsc++;
 	frame = requestAnimationFrame(tick);
 }
 
@@ -101,6 +108,8 @@ requestAnimationFrame(tick);
 setInterval(() => {
 	rcps = clicks;
 	cps = rcps;
+	fps = fpsc;
+	fpsc = 0;
 	clicks = 0;
 	delaySum = 0;
 }, 1000);
