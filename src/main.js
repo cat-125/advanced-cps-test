@@ -19,12 +19,24 @@ let cps = 0;
 let fps = 60;
 let fpsc = 0;
 
-/*const cpsWin = new cheatgui.Window({
-	title: "Settings",
+const win = new cheatgui.Window({
+	title: "Configuration",
 	x: 10,
-	y: 10,
-	collapsed: true
-});*/
+	y: 100,
+	width: 250,
+	height: 200,
+	expanded: false
+});
+
+win.append(new cheatgui.Button('Save configuration', () => {
+	localStorage.setItem('acpst-cfg', JSON.stringify(win.getConfig()));
+}));
+
+// ...
+
+if (localStorage.getItem('acpst-cfg')) {
+	win.loadConfig(JSON.parse(localStorage.getItem('acpst-cfg')));
+}
 
 function getTime() {
 	return performance.now();
