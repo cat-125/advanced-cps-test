@@ -1,0 +1,254 @@
+.cgui {
+	font-family: monospace;
+	font-size: 15px;
+}
+
+/* Widgets */
+
+.cgui-widget {
+	margin-bottom: 6px !important;
+}
+
+/* Window */
+
+.cgui-window {
+	border-radius: 0;
+	backdrop-filter: none;
+	transition: none;
+	border: 1px solid #6E6E8080;
+}
+
+.cgui-window-header {
+	background: #0A0A0AFF;
+	padding: 2px 8px;
+	cursor: default;
+}
+
+.cgui-window-arrow {
+	margin-top: -2px;
+}
+
+.cgui-window-content {
+	background: #0F0F0FF0;
+	padding: 4px;
+}
+
+.cgui-window-resize {
+	bottom: 6px;
+	right: 4px;
+	font-size: 1.6em;
+	color: #4296FA33;
+	cursor: default;
+}
+
+.cgui-window-resize:hover {
+	color: #4296FAAB;
+}
+
+.cgui-window-resize:active {
+	color: #4296FAF2;
+}
+
+.cgui-window.active>.cgui-window-header {
+	background: #294A7AFF;
+	font-weight: normal;
+}
+
+.cgui-window.active>.cgui-window-content {
+	background: #0F0F0FF0;
+}
+
+.cgui-window.cgui-dragging {
+	box-shadow: none;
+}
+
+.cgui-window-content::-webkit-scrollbar {
+	width: 10px;
+}
+
+.cgui-window-content::-webkit-scrollbar-track {
+	background-color: #05050587;
+}
+
+.cgui-window-content::-webkit-scrollbar-thumb {
+	background-color: #4F4F4FFF;
+	border-radius: 15px;
+}
+
+.cgui-window-content::-webkit-scrollbar-thumb:hover {
+	background-color: #696969FF;
+}
+
+.cgui-window-content::-webkit-scrollbar-thumb:active {
+	background-color: #1A66BFFF;
+}
+
+.cgui-window.collapsed>.cgui-window-header {
+	background: #00000082;
+}
+
+/* Button */
+
+.cgui-btn {
+	background: #4296FA66;
+	padding: 4px;
+	width: auto;
+	border-radius: 0;
+	transition: none !important;
+	cursor: default;
+}
+
+.cgui-btn:hover {
+	background: #4296FAFF;
+}
+
+.cgui-btn:active {
+	background: #0F87FAFF;
+	color: #fff;
+	transition: .15s;
+}
+
+/* Input */
+
+.cgui-input-wrapper {
+	margin: 0;
+	padding: 0;
+}
+
+.cgui-input {
+	background: #294A7A8A;
+	font-family: monospace;
+	color: #fff;
+	padding: 4px;
+	width: 60%;
+	border-radius: 0;
+	display: inline-block;
+	transition: .1s;
+	user-select: none;
+	cursor: text;
+	border: none;
+	max-width: 100%;
+}
+
+.cgui-input:focus {
+	border: none;
+}
+
+.cgui-input-label {
+	display: inline-block;
+	margin: 0;
+	padding: 5px;
+	margin-left: 10px;
+}
+
+/* Slider */
+
+.cgui-slider {
+	background: #294A7A8A;
+	width: 60%;
+	border-radius: 0;
+	transition: none;
+	height: 26px;
+	padding: 0 4px;
+}
+
+.cgui-slider-thumb {
+	background: #3D85E0FF;
+	min-width: 32px;
+	height: 20px;
+	border-radius: 0;
+	transition: none;
+	color: #fff;
+}
+
+.cgui-slider-thumb:active {
+	background: #4296FAFF;
+}
+
+/* Switch */
+
+.cgui-switch {
+	cursor: default;
+}
+
+.cgui-switch-slider {
+	margin-right: 8px;
+	width: 24px;
+	height: 24px;
+	position: relative;
+	background: #294A7A8A;
+	border-radius: 0;
+	transition: none;
+}
+
+.cgui-switch-slider::before {
+	width: 14px;
+	height: 14px;
+	background-color: transparent;
+	border-radius: 0;
+	top: 5px;
+	left: 5px;
+	display: none;
+}
+
+.cgui-switch:hover>.cgui-switch-slider::before {
+	background-color: transparent;
+}
+
+.cgui-switch:hover>.cgui-switch-slider {
+	background: #4296FA66;
+}
+
+.cgui-switch>input:checked+.cgui-switch-slider {
+	background-color: #294A7A8A;
+}
+
+.cgui-switch:hover>input:checked+.cgui-switch-slider {
+	background-color: #4296FA66;
+}
+
+.cgui-switch>input:checked+.cgui-switch-slider::before {
+	background-color: #4296FAFF;
+	transform: none;
+	display: block;
+}
+
+.cgui-switch:hover>input:checked+.cgui-switch-slider::before {
+	background-color: #4296FAFF;
+}
+
+/* Tree */
+
+.cgui-tree>.cgui-tree-header {
+	background: #4296FA4F;
+	transition: none;
+	border-radius: 0;
+	cursor: default;
+	padding: 2px 8px;
+}
+
+.cgui-tree>.cgui-tree-header>.cgui-tree-title {
+	font-weight: normal;
+}
+
+.cgui-tree>.cgui-tree-header>.cgui-tree-arrow {
+	margin-top: 1px;
+	font-size: 12px;
+}
+
+.cgui-tree>.cgui-tree-content {
+	margin: 0;
+	padding: 10px;
+	margin-left: 3px;
+	border-left: none;
+}
+
+.cgui-tree>.cgui-tree-header:hover {
+	background-color: #4296FACC;
+	transition: none;
+}
+
+.cgui-tree>.cgui-tree-header:active {
+	background-color: #4296FAFF;
+	transition: none;
+}
