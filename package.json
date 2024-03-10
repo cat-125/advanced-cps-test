@@ -1,0 +1,28 @@
+{
+  "name": "advanced-cps-test",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cat-125/advanced-cps-test.git"
+  },
+  "keywords": [
+    "advanced",
+    "cps",
+    "test",
+    "clicker"
+  ],
+  "author": "Cat-125",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/cat-125/advanced-cps-test/issues"
+  },
+  "homepage": "https://github.com/cat-125/advanced-cps-test#readme",
+  "devDependencies": {
+    "electron": "^29.1.1"
+  }
+}
