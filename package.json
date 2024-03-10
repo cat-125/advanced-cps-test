@@ -1,10 +1,12 @@
 {
   "name": "advanced-cps-test",
   "version": "0.1.0",
-  "description": "",
+  "description": "Advanced CPS test",
   "main": "index.js",
   "scripts": {
-    "start": "npx electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,16 @@
   },
   "homepage": "https://github.com/cat-125/advanced-cps-test#readme",
   "devDependencies": {
+    "@electron-forge/cli": "^7.3.0",
+    "@electron-forge/maker-deb": "^7.3.0",
+    "@electron-forge/maker-rpm": "^7.3.0",
+    "@electron-forge/maker-squirrel": "^7.3.0",
+    "@electron-forge/maker-zip": "^7.3.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.0",
+    "@electron-forge/plugin-fuses": "^7.3.0",
     "electron": "^29.1.1"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
   }
 }
