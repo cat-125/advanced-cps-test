@@ -1,11 +1,22 @@
 const canvas = document.getElementsByTagName('canvas')[0];
-const [width, height] = [window.innerWidth, window.innerHeight - 4];
+let [width, height] = [window.innerWidth, window.innerHeight - 4];
 canvas.width = width * devicePixelRatio;
 canvas.height = height * devicePixelRatio;
 canvas.style.width = width + 'px';
 canvas.style.height = height + 'px';
 const ctx = canvas.getContext('2d');
 ctx.scale(devicePixelRatio, devicePixelRatio);
+
+function resize() {
+	[width, height] = [window.innerWidth, window.innerHeight - 4];
+	canvas.width = width * devicePixelRatio;
+	canvas.height = height * devicePixelRatio;
+	canvas.style.width = width + 'px';
+	canvas.style.height = height + 'px';
+	ctx.scale(devicePixelRatio, devicePixelRatio);
+}
+
+window.addEventListener('resize', resize);
 
 let mouseX = mouseY = prevX = prevY = 0;
 let isMouseDown = false;
@@ -41,12 +52,6 @@ if (localStorage.getItem('acpst-cfg')) {
 function getTime() {
 	return performance.now();
 }
-
-/*document.addEventListener('pointermove', e => {
-	e.preventDefault();
-	if (e.touches) e = e.touches[0];
-	[prevX, prevY, mouseX, mouseY] = [mouseX, mouseY, e.clientX, e.clientY];
-});*/
 
 document.addEventListener('pointerdown', e => {
 	if (e.touches) e = e.touches[0];
